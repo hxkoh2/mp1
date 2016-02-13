@@ -57,7 +57,7 @@ p {
 #homepage {
 	background-color: $cream;	
 	//margin-top: $nav-height;
-	height: $page-height - $nav-height;
+	height: $page-height;
 }
 
 .navbar {
@@ -197,30 +197,24 @@ video {
 }
 
 .carousel {
-	width: $page-width*3+10;
+	width: 100%;
 	height: $carousel-height;
 	position: absolute;
 	left: 0px;
+	//overflow-x: auto;
+	//overflow-y: hidden;
 }
 
 .carousel-pages {
-	position: relative;
-	width: $page-width;
+	position: absolute;
+	//width: $page-width;
+	width: 100%;
 	height: $carousel-height;
-	display: inline-block;
-	/*left: 0px;*/
+	display: none;
+	//visibility: hidden;
+	-webkit-transition: visibility linear 5s;
+	transition: visibility linear 5s;
 }	
-
-/*
-.slide_left {
-	@include slide(h_slide_left);
-}
-
-.slide_right {
-	
-	@include slide(h_slide_right);
-}
-*/
 
 .carousel-content {
 	width: fit-content;
@@ -238,8 +232,10 @@ video {
 .carousel-description {
 	vertical-align: top;
 	padding-left: 50px;
+	padding-right: 0px;
 	display: inline-block;
 	text-align: left;
+	width: 400px;
 }
 
 .carousel-description ol {
