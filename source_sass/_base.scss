@@ -1,13 +1,472 @@
-@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
-@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url(https://fonts.googleapis.com/css?family=Lato|Delius|Special+Elite|Love+Ya+Like+A+Sister|Kranky|Sniglet|Cedarville+Cursive|Sacramento);
+
+html {
+	overflow-x: hidden;
+}
 
 
 h1 {
-  font-size: 2.2rem;
-  color: lighten($orange, 25);
+	font-size: 6.0rem;
+	font-weight: bold;
+	color: $blue;
+	font-family: $font-title;
+	padding-bottom: 10px;
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+h2 {
+	font-size: 5.5rem;
+	font-weight: bold;
+	color: $blue;
+	font-family: $font-title;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 70px;
+}
+
+h3 {
+	font-size: 3.0rem;
+	font-weight: bold;
+	color: $mocha;
+	font-family: $font-primary;
+	text-align: center;
+}
+
+h4 {
+	font-family: $font-secondary;
+	font-weight: bold;
+	font-size: 2.0rem;
+}
+
+p {
+	font-family: $font-secondary;
+	font-size: 20px;
+	text-align: center;
+	padding: 30px;
+}
+
+.filler {
+	height: $nav-height;
+	background-color: $cream;
+}
+
+.fullpage {
+	height: $page-height;
+	position: relative;
+}
+
+#homepage {
+	background-color: $cream;	
+	//margin-top: $nav-height;
+	height: $page-height - $nav-height;
+}
+
+.navbar {
+	position: fixed;
+	background-color: $aqua;
+	z-index: 10;
+	height: $nav-height;
+	width: $page-width;
+	opacity: 1;
+	top:0;
+}
+
+.resize-smaller {
+	@include resize(resize-smaller);
+}
+
+.resize-bigger {
+	@include resize(resize-bigger);
+}
+
+@keyframes resize-smaller {
+	0%	 {height: 70px;}
+	100% {height: 50px;}
+}
+
+@keyframes resize-bigger {
+	0%	 {height: 50px;}
+	100% {height: 70px;}
+}
+
+ul {
+	position: relative; 
+	float: right;	
+	height: 100%;
+	margin-right: 10px;
+}
+
+ul li {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: $font-primary;
+	font-size: 18pt;
+	color: $mocha;
+}
+
+ul li:hover{
+	background-color: rgba(43, 56, 86, 0.5);
+}
+
+ul li span {
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	position: relative;
+}
+
+#logo {
+	position: absolute; 
+	color: $mocha;
+	top: 50%;
+	/*margin-top: -20px;*/
+	transform: translateY(-50%);
+	margin-left: 20px;
+	display: inline;
+	font-family: $font-primary;
+	font-size: 30pt;
+}
+
+#logo:hover {
+	cursor: pointer;
+}
+
+.horizontal-center {
+	position: relative;
+	width: fit-content;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.vertical-center {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#homepage .horizontal-center.vertical-center {
+	transform: translateX(-50%) translateY(-50%);
+}
+
+#about-us {
+	background-image: url("../media/Clouds.jpg");
+	background-size: $page-width;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.column {
+	display: inline-block;
+	height: $block-height;
+	width: $block-width;
+	vertical-align: top;
+}
+
+#about-us .horizontal-center {
+	height: $block-height;
+	width: fit-content;
+}
+
+video {
+	display: block;
+	margin: auto;
+	width: 500px;
+}
+
+#our-cause h2 {
+	padding-bottom: 20px;
+}
+
+#our-cause {
+	background-color: $cream;
+}
+
+#products {
+	background-image: url("../media/ProductsWallpaper.jpg");
+	background-repeat: no-repeat; 
+}
+
+#products h2 {
+	padding-bottom: 30px;
+}
+
+.table-outer {
+	width: $page-width;
+	
+}
+
+.carousel {
+	width: $page-width*3+10;
+	height: $carousel-height;
+	position: absolute;
+	left: 0px;
+}
+
+.carousel-pages {
+	position: relative;
+	width: $page-width;
+	height: $carousel-height;
+	display: inline-block;
+	/*left: 0px;*/
+}	
+
+/*
+.slide_left {
+	@include slide(h_slide_left);
+}
+
+.slide_right {
+	
+	@include slide(h_slide_right);
+}
+*/
+
+.carousel-content {
+	width: fit-content;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: -o-fit-content;
+	width: -ms-fit-content;
+	margin: auto;
+	top: 50%;
+	margin-top: -$carousel-height/2;
+	position: relative;
+	display: block;
+}
+
+.carousel-description {
+	vertical-align: top;
+	padding-left: 50px;
+	display: inline-block;
+	text-align: left;
+}
+
+.carousel-description ol {
+	font-family: $font-secondary;
+	font-size: $carousel-fontsize;
+	padding:0;
+}
+
+.carousel-description p {
+	font-family: $font-secondary;
+	font-size: $carousel-fontsize;
+	padding: 0;
+	text-align: left; 
+}
+
+.carousel-description li {
+	list-style-type: circle;
+}
+
+.carousel-header {
+	display: inline-block;
+	padding-bottom: 30px;
+}
+
+.carousel-bottom {
+	display: block;
+	width: fit-content;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: -o-fit-content;
+	width: -ms-fit-content;
+}
+
+.arrow-left {
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	left: 0%; 
+	margin-top: -25px;
+} 
+
+.arrow-left:hover {
+	cursor: pointer;
+}
+
+.arrow-right {
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	margin-top: -25px;
+}
+.arrow-right:hover {
+	cursor: pointer;
+}
+
+.carousel-img {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+}
+
+.hidden {
+	display: none;
+}
+
+.square {
+	position: relative;
+	width: $square-width;
+	height: $square-height;
+	display: inline-block;
+	margin: 30px;
+	z-index: 2;
+	font-family: $font-primary;
+	font-size: 30px;
+	color: $mocha;
+	opacity: 1;
+}
+
+.square:hover {
+	cursor: pointer;
+}
+
+#projects span {
+	position: absolute;
+	width: fit-content;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	padding: 5px;
+	text-align: center;
+}
+
+.leaves {
+	background-image: url("../media/Leaves.jpg");
+}
+
+.hearts {
+	background-image: url("../media/Hearts.png");
+}
+
+.flowers {
+	background-image: url("../media/Flowers.jpg");
+}
+
+.square-bk {
+	position: relative;
+	z-index: -1;
+	opacity: 0.5;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+}
+
+#projects .horizontal-center {
+	text-align: center;
+}
+.modal{
+	left:0;
+	top: 0;
+	display: none;
+	z-index: 3;
+	position: fixed;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+	margin: auto;
+	margin-top: $page-height/2 - $modal-height/2 + $nav-height;
+	width: $modal-width;
+	overflow: auto;
+	background-color: $cream;
+	position: relative;
+}
+
+/*Source: http://www.w3schools.com/howto/howto_css_modals.asp */
+.close {
+	color: $blue;
+	font-size: 28px;
+	font-weight: bold;
+	top: 0;
+	position: absolute;
+	font-family: $font-secondary;
+	padding: 10px;
+	width: fit-content;
+	right:0;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-info {
+	display: block;
+	width: $modal-width*0.85;
+	margin: auto;
+
+}
+
+.modal-text {
+	font-family: $font-secondary;
+	font-size: 16px;
+	padding: 0px;
+}
+
+.modal-picture {
+	float: left;
+	height: 350px;
+	margin-right: 10px;
+	margin-bottom: 48px;
+}
+
+.modal-info > div {
+	margin-top: 48px;
+	width: 100%;
+	text-align: center;
+}
+
+#contact-us {
+	height: $footer-height;
+	background-image: url("../media/Wood.jpg");
+}
+
+.email-icon {
+	display: inline-block;
+}
+
+i{
+	padding: 10px;
+}
+
+i:hover{
+	color: $mocha;
+}
+
+.email {
+	position: relative;
+	width: fit-content;
+	display: inline-block;
+}
+
+#contact-us h2 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	float: left;
+}
+
+#contact-us .vertical-center {
+	position: absolute;
+}
+
+a:visited,
+a:link{
+	text-decoration: none;	
+	color: black;
+}
+
+#contact-us .horizontal-center.vertical-center {
+	transform: translateX(-50%) translateY(-50%);
 }
