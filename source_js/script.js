@@ -5,6 +5,7 @@ var currcarousel = 0;
 /* Used http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery for help with carousel*/
 $(document).ready(function(){
 	$('.carousel-pages:first').css({'display':'inline-block'});
+	$('#navbar').addClass('resize-bigger');
 
 	$('#leftarrow').on('click', 
 		function(){
