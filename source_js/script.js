@@ -4,25 +4,10 @@ var currcarousel = 0;
 
 /* Used http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery for help with carousel*/
 $(document).ready(function(){
-	//move last div in front in case of previous
-	//$('.carousel-pages:first').before($('.carousel-pages:last'));
-	//var left = page_width*-1;
-	//$('#carousel').css({'left' : left+"px"});
-	//$('.carousel-pages:first').addClass('hidden');
-	//$('.carousel-pages:last').addClass('hidden');
-
 	$('.carousel-pages:first').css({'display':'inline-block'});
 
 	$('#leftarrow').on('click', 
 		function(){
-			/*//$('.carousel-pages:first').removeClass('hidden');
-	 		$('#carousel').animate({'left' : (left+page_width)+"px"}, 500,function(){    
-	            //$('.carousel-pages:first').before($('.carousel-pages:last'));           
-	            //$('#carousel').css({'left' : left+"px"});
-	        	//$('.carousel-pages:first').addClass('hidden');
-				//$('.carousel-pages:last').addClass('hidden');	
-	        });
-	        return false;*/
 	        $('.carousel-pages:eq('+currcarousel+')').fadeOut("slow");
 	        if(currcarousel==0) {
 	        	currcarousel=2;
@@ -36,14 +21,6 @@ $(document).ready(function(){
 
 	$('#rightarrow').on('click', 
 		function(){	  
-			/*//$('.carousel-pages:last').removeClass('hidden');      
-	        $('#carousel').animate({'left' : (left-page_width)+"px"}, 500, function () {
-	        	//$('.carousel-pages:last').after($('.carousel-pages:first'));                     
-	        	//$('#carousel').css({'left' : left+"px"});	
-	        	//$('.carousel-pages:first').addClass('hidden');
-				//$('.carousel-pages:last').addClass('hidden');        
-	        });
-	        return false;*/
 	        $('.carousel-pages:eq('+currcarousel+')').fadeOut("slow");
 	        currcarousel = (currcarousel + 1) % 3;
 	        $('.carousel-pages:eq('+currcarousel+')').fadeIn("slow");
