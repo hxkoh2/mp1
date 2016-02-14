@@ -55,7 +55,11 @@ p {
 
 #homepage {
 	background-color: $cream;	
-	height: $page-height;
+	height: 100vh;
+
+	.horizontal-center.vertical-center {
+		transform: translateX(-50%) translateY(-50%);
+	}
 }
 
 .navbar {
@@ -140,11 +144,7 @@ ul {
 .vertical-center {
 	top: 50%;
 	transform: translateY(-50%);
-}
-
-#homepage .horizontal-center.vertical-center {
-	transform: translateX(-50%) translateY(-50%);
-}
+} 
 
 #about-us {
 	background-image: url("../media/Clouds.jpg");
