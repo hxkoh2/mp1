@@ -18,3 +18,16 @@ For MP1, you should edit the following:
 - `public/media` - all your media files (images, videos, GIFs etc. ) go here. Use relative path to access these from your HTML files.
 
 **Do not edit anything under the `public\css` and `public\js` folders.** All things there are auto-generated and any changes you make there will get overwritten by Grunt.
+
+
+References
+- http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
+- http://www.w3schools.com/howto/howto_css_modals.asp
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+- http://api.jquery.com/fadein/
+- https://css-tricks.com/snippets/jquery/smooth-scrolling/
+- http://api.jquery.com/offset/
+- http://api.jquery.com/animate/
+
+Additional Comments
+- Click on the rectangles on the Projects page to see the modals 
